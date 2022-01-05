@@ -42,7 +42,7 @@ function Distributions.eltype(d::PointwiseKDE{T}) where T <: Number
     T
 end
 
-function Distributions._rand!(rng::AbstractRNG, d::PointwiseKDE{T}, x::AbstractArray) where T <: Real
+function Distributions._rand!(rng::AbstractRNG, d::PointwiseKDE{T}, x::AbstractArray{T}) where T <: Real
     nd, np = size(d.pts)
     i = rand(rng, 1:np)
 
@@ -55,7 +55,7 @@ function Distributions._rand!(rng::AbstractRNG, d::PointwiseKDE{T}, x::AbstractA
     x
 end
 
-function Distributions._rand!(rng::AbstractRNG, d::PointwiseKDE{T}, x::AbstractMatrix) where T <: Real
+function Distributions._rand!(rng::AbstractRNG, d::PointwiseKDE{T}, x::AbstractMatrix{T}) where T <: Real
     nd, np = size(x)
 
     for j in 1:np
@@ -65,7 +65,7 @@ function Distributions._rand!(rng::AbstractRNG, d::PointwiseKDE{T}, x::AbstractM
     x
 end
 
-function Distributions._logpdf(d::PointwiseKDE{T}, x::AbstractArray) where T <: Real
+function Distributions._logpdf(d::PointwiseKDE{T}, x::AbstractArray{T}) where T <: Real
     nd, np = size(d.pts)
 
     logp::T = zero(T) - Inf
