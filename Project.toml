@@ -1,7 +1,7 @@
 name = "PointwiseKDEs"
 uuid = "8083989d-5216-488c-bbe7-b79abd7e3507"
 authors = ["Will M. Farr <will.farr@ligo.org>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
